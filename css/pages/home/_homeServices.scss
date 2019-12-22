@@ -1,0 +1,183 @@
+.service {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: grid;
+    grid-template: 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr 1fr;
+    @include max-pc {
+        grid-template-columns: .5fr 1fr 1fr 1fr 1fr .5fr;
+    }
+    @include max-tablet {
+        grid-template-rows: repeat(4, 1fr);
+    }
+    @include max-phone-l {
+        grid-template-rows: repeat(8, 1fr);
+    }
+    @include max-phone {
+        grid-template-columns: .5fr 4fr .5fr;
+    }
+    &__content {
+        background: #fff;
+        grid-area: 1/2/3/6;
+        display: grid;
+        grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+        @include max-tablet {
+            grid-area: 1/2/5/6;
+            grid-template-rows: repeat(4, 1fr);
+        }
+        @include max-phone-l {
+            grid-area: 1/2/9/6;
+            grid-template-rows: repeat(8, 1fr);
+        }
+        @include max-phone {
+            grid-area: 1/2/9/3;
+            grid-template-columns: 4fr;
+            grid-template-rows: repeat(8, 1fr);
+        }
+    }
+    &__main {
+        padding: 15px;
+        grid-area: 1;
+        @include max-tablet {
+            grid-column: 1/4;
+        }
+        @include max-phone-l {
+            grid-area: 1/1/3/3;
+        }
+        @include max-phone {
+            grid-area: 1/1;
+        }
+    }
+    &__photo {
+        &--first {
+            background: url(../img/mainServices/1.jpg) no-repeat;
+            background-size: cover;
+            grid-area: 1/2;
+            @include max-tablet {
+                grid-area: 2/1;
+            }
+            @include max-phone-l {
+                grid-area: 3/1/5/3;
+            }
+            @include max-phone {
+                grid-area: 3/1;
+            }
+        }
+        &--sec {
+            background: url(../img/mainServices/2.jpg) no-repeat;
+            background-size: cover;
+            grid-area: 1/4;
+            @include max-tablet {
+                grid-area: 3/4;
+            }
+            @include max-phone-l {
+                grid-area: 5/3/7/5;
+            }
+            @include max-phone {
+                grid-area: 5/1;
+            }
+        }
+        &--trd {
+            background: url(../img/mainServices/3.jpg) no-repeat;
+            background-size: cover;
+            grid-area: 2/3;
+            @include max-tablet {
+                grid-area: 4/1;
+            }
+            @include max-phone-l {
+                grid-area: 7/1/9/3;
+            }
+            @include max-phone {
+                grid-area: 7/1;
+            }
+        }
+    }
+    &__item {
+        padding: 15px;
+        @include max-tablet {
+            padding: 5px;
+        }
+        @include max-phone {
+            padding: 15px;
+        }
+        &--first {
+            grid-area: 1/3;
+            @include max-tablet {
+                grid-area: 2/2/3/5;
+            }
+            @include max-phone-l {
+                grid-area: 3/3/5/5;
+            }
+            @include max-phone {
+                grid-area: 4/1;
+            }
+        }
+        &--sec {
+            grid-area: 2/2;
+            @include max-tablet {
+                grid-area: 3/1/4/4;
+            }
+            @include max-phone-l {
+                grid-area: 5/1/7/3;
+            }
+            @include max-phone {
+                grid-area: 6/1;
+            }
+        }
+        &--trd {
+            grid-area: 2/4;
+            @include max-tablet {
+                grid-area: 4/2/4/5;
+            }
+            @include max-phone-l {
+                grid-area: 7/3/9/5;
+            }
+            @include max-phone {
+                grid-area: 8/1;
+            }
+        }
+    }
+    &__subtitle {
+        font-size: 18px;
+        @include max-pc {
+            font-size: 16px;
+        }
+        @include max-tablet-l {
+            font-size: 12px;
+        }
+        @include max-tablet {
+            font-size: 14px;
+        }
+        @include max-phone {
+            font-size: 19px;
+        }
+        &::after {
+            margin-bottom: 5px;
+        }
+    }
+    &__slider {
+        grid-area: 2/1;
+        @include max-tablet {
+            grid-area: 1/4;
+        }
+        @include max-phone-l {
+            grid-area: 1/3/3/6;
+        }
+        @include max-phone {
+            grid-area: 2/1;
+        }
+    }
+    &__desc {
+        padding-top: 10px;
+        @include max-tablet-l {
+            padding-top: 5px;
+            font-size: 9px;
+        }
+        @include max-phone {
+            font-size: 14px;
+        }
+        // @include max-tablet {
+        //     font-size: 12px;
+        // }
+    }
+}
